@@ -79,10 +79,10 @@ def instructors():
             for result in results:
                 if result.instructor not in result_set:
                     result_set.append(result.instructor)
+            result_set.sort()
             for instructor in result_set:
                 d = {'instructor': instructor}
                 json_results.append(d)
-                json_results.sort()
 
         response = jsonify(json_results)
         response.headers.add('Access-Control-Allow-Origin', '*')
